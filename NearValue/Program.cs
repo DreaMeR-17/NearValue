@@ -12,12 +12,11 @@ namespace NearValue
             int maxRandomValue = 51;
 
             int arrayValue = 30;
-            int stepArrayIndex = 1;
-            int nextValueArray;
-            int backValueArray;
+            int nextValue;
+            int backValue;
 
-            int nextIndexArray;
-            int backIndexArray;
+            int nextIndex;
+            int backIndex;
 
             int[] array = new int[arrayValue];
 
@@ -40,13 +39,13 @@ namespace NearValue
 
             for (int i = 1; i < lastIndexValue; i++)
             {
-                nextIndexArray = i + stepArrayIndex;
-                backIndexArray = i - stepArrayIndex;
+                nextIndex = i + 1;
+                backIndex = i - 1;
 
-                nextValueArray = array[nextIndexArray];
-                backValueArray = array[backIndexArray];
+                nextValue = array[nextIndex];
+                backValue = array[backIndex];
 
-                if (backValueArray < array[i] && nextValueArray < array[i])
+                if (backValue < array[i] && nextValue < array[i])
                 {
                     Console.Write(array[i] + " ");
                 }
