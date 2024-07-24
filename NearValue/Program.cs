@@ -11,49 +11,49 @@ namespace NearValue
             int minRandomValue = 10;
             int maxRandomValue = 51;
 
-            int arrayValue = 30;
+            int numbersValue = 30;
             int nextValue;
             int backValue;
 
             int nextIndex;
             int backIndex;
 
-            int[] array = new int[arrayValue];
+            int[] numbers = new int[numbersValue];
 
-            int lastIndexValue = array.Length - 1;
+            int lastIndex = numbers.Length - 1;
 
             Console.WriteLine("Дан одномерный массив: ");
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                array[i] = random.Next(minRandomValue, maxRandomValue);
-                Console.Write(array[i] + " ");
+                numbers[i] = random.Next(minRandomValue, maxRandomValue);
+                Console.Write(numbers[i] + " ");
             }
 
             Console.WriteLine("\nЛокальные максимумы данного массива: ");
 
-            if (array[0] > array[1])
+            if (numbers[0] > numbers[1])
             {
-                Console.Write(array[0] + " ");
+                Console.Write(numbers[0] + " ");
             }
 
-            for (int i = 1; i < lastIndexValue; i++)
+            for (int i = 1; i < lastIndex; i++)
             {
                 nextIndex = i + 1;
                 backIndex = i - 1;
 
-                nextValue = array[nextIndex];
-                backValue = array[backIndex];
+                nextValue = numbers[nextIndex];
+                backValue = numbers[backIndex];
 
-                if (backValue < array[i] && nextValue < array[i])
+                if (numbers[i] > nextValue && numbers[i] > backValue)
                 {
-                    Console.Write(array[i] + " ");
+                    Console.Write(numbers[i] + " ");
                 }
             }
 
-            if (array[lastIndexValue] > array[lastIndexValue - 1])
+            if (numbers[lastIndex] > numbers[lastIndex - 1])
             {
-                Console.Write(array[lastIndexValue] + " ");
+                Console.Write(numbers[lastIndex] + " ");
             }
         }
     }
